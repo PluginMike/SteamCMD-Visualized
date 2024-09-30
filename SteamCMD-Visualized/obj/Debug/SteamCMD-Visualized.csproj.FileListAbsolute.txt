@@ -1,0 +1,14 @@
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\bin\Debug\SteamCMD-Visualized.exe.config
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\bin\Debug\SteamCMD-Visualized.exe
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\bin\Debug\SteamCMD-Visualized.pdb
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD-Visualized.csproj.AssemblyReference.cache
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD_Visualized.MainForm.resources
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD_Visualized.Properties.Resources.resources
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD-Visualized.csproj.GenerateResource.cache
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD-Visualized.csproj.CoreCompileInputs.cache
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD.D7259C0D.Up2Date
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD-Visualized.exe
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD-Visualized.pdb
+C:\Users\Michael Sauerman\source\repos\SteamCMD-Visualized\SteamCMD-Visualized\obj\Debug\SteamCMD_Visualized.AddEditServer.resources
