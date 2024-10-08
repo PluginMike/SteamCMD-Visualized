@@ -1,54 +1,29 @@
 name: Release Compilation
-
 on:
-  push:
-    branches:
-      - master
+  release:
+    types: [created]
 
 jobs:
   build:
     runs-on: windows-latest
-    
     steps:
     - uses: actions/checkout@v3
-    
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '4.7.2'  # Update this to match your project's .NET version
-        
+        dotnet-version: '8.0.400'  # Update this to match your project's .NET version
     - name: Restore dependencies
       run: dotnet restore
-      
     - name: Build
       run: dotnet build --configuration Release --no-restore
-      
     - name: Publish
       run: dotnet publish SteamCMD-Visualized/SteamCMD-Visualized.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish
-      
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: SteamCMD-Visualized
-        path: ./publish/SteamCMD-Visualized.exe
-
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: v${{ github.run_number }}
-        release_name: Release ${{ github.run_number }}
-        draft: false
-        prerelease: false
-
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        upload_url: ${{ github.event.release.upload_url }}
         asset_path: ./publish/SteamCMD-Visualized.exe
         asset_name: SteamCMD-Visualized.exe
         asset_content_type: application/octet-stream
