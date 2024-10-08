@@ -3,19 +3,19 @@ name: Release Compilation
 on:
   push:
     branches:
-      - master
+      - master  # Updated from 'main' to 'master'
 
 jobs:
   build:
     runs-on: windows-latest
     
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3  # Updated to v3
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '4.7.2'
+        dotnet-version: '4.7.2'  # Update this to match your project's .NET version
         
     - name: Restore dependencies
       run: dotnet restore
@@ -27,7 +27,7 @@ jobs:
       run: dotnet publish SteamCMD-Visualized/SteamCMD-Visualized.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o ./publish
       
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3  # Updated to v3
       with:
         name: SteamCMD-Visualized
         path: ./publish/SteamCMD-Visualized.exe

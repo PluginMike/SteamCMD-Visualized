@@ -2,27 +2,37 @@ name: Commit Lint and Versioning
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ master ]  # Updated from 'main' to 'master'
   push:
-    branches: [ master ]
+    branches: [ master ]  # Updated from 'main' to 'master'
 
 jobs:
   commitlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v4
+      - uses: wagoid/commitlint-github-action@v5
 
   generate-version:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'  # Updated from 'main' to 'master'
     needs: commitlint
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Configure Git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
 
       - name: Install semantic-release
         run: npm install -g semantic-release @semantic-release/git @semantic-release/github conventional-changelog-conventionalcommits
