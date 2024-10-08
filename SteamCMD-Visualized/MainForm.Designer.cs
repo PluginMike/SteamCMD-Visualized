@@ -31,13 +31,14 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.addServer = new System.Windows.Forms.Button();
             this.editServer = new System.Windows.Forms.Button();
+            this.delete_Button = new System.Windows.Forms.Button();
             this.serverList = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.delete_Button = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -49,7 +50,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 594F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 595F));
             this.tableLayoutPanel2.Controls.Add(this.addServer, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.editServer, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.delete_Button, 2, 0);
@@ -66,7 +67,7 @@
             this.addServer.Location = new System.Drawing.Point(4, 4);
             this.addServer.Name = "addServer";
             this.addServer.Padding = new System.Windows.Forms.Padding(4);
-            this.addServer.Size = new System.Drawing.Size(81, 51);
+            this.addServer.Size = new System.Drawing.Size(80, 51);
             this.addServer.TabIndex = 0;
             this.addServer.Text = "Add Server";
             this.addServer.UseVisualStyleBackColor = true;
@@ -74,7 +75,7 @@
             // 
             // editServer
             // 
-            this.editServer.Location = new System.Drawing.Point(92, 4);
+            this.editServer.Location = new System.Drawing.Point(91, 4);
             this.editServer.Name = "editServer";
             this.editServer.Padding = new System.Windows.Forms.Padding(4);
             this.editServer.Size = new System.Drawing.Size(94, 51);
@@ -82,6 +83,16 @@
             this.editServer.Text = "Edit Server";
             this.editServer.UseVisualStyleBackColor = true;
             this.editServer.Click += new System.EventHandler(this.editServer_Click);
+            // 
+            // delete_Button
+            // 
+            this.delete_Button.Location = new System.Drawing.Point(192, 4);
+            this.delete_Button.Name = "delete_Button";
+            this.delete_Button.Size = new System.Drawing.Size(94, 51);
+            this.delete_Button.TabIndex = 2;
+            this.delete_Button.Text = "Delete Server";
+            this.delete_Button.UseVisualStyleBackColor = true;
+            this.delete_Button.Click += new System.EventHandler(this.delete_Button_Click);
             // 
             // serverList
             // 
@@ -97,19 +108,21 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.progressBar1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(191, -1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(585, 362);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(296, 1);
+            this.label1.Location = new System.Drawing.Point(4, 341);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 0;
@@ -143,15 +156,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Game List";
             // 
-            // delete_Button
+            // progressBar1
             // 
-            this.delete_Button.Location = new System.Drawing.Point(193, 4);
-            this.delete_Button.Name = "delete_Button";
-            this.delete_Button.Size = new System.Drawing.Size(94, 51);
-            this.delete_Button.TabIndex = 2;
-            this.delete_Button.Text = "Delete Server";
-            this.delete_Button.UseVisualStyleBackColor = true;
-            this.delete_Button.Click += new System.EventHandler(this.delete_Button_Click);
+            this.progressBar1.Location = new System.Drawing.Point(296, 4);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(127, 37);
+            this.progressBar1.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -183,6 +193,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button delete_Button;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
