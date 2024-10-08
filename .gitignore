@@ -14,6 +14,10 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Specific ignore for SteamCMD-Visualized
+SteamCMD-Visualized/[Bb]in/
+SteamCMD-Visualized/[Oo]bj/
+
 # Visual Studio files
 .vs/
 *.user
