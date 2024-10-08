@@ -4,49 +4,42 @@ using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.Threading.Tasks;
 
 namespace SteamCMD_Visualized.Backend.Model
 {
     public class GameServers
     {
-        List<ServerTemplate> servers;
-        private const string JsonFilePath = "servers.json";
+        private List<ServerTemplate> servers;
+        private readonly string jsonFilePath;
+
         public GameServers()
         {
+            servers = new List<ServerTemplate>(); // Initialize the list
+            jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "servers.json");
             LoadServersFromJson();
         }
+
         public void CreateServer(string appID, string gameName, bool serverActive, UpdateInterval updateInterval)
         {
             ServerTemplate newServer = new ServerTemplate(appID, gameName, serverActive, updateInterval);
             servers.Add(newServer);
             SaveServersToJson();
         }
+
         public void ChangeSetting(ServerTemplate server)
         {
-            ServerTemplate tempServer = servers.FirstOrDefault(s => s.appID == server.appID);
-            if (tempServer != null)
+            int index = servers.FindIndex(s => s.appID == server.appID);
+            if (index != -1)
             {
-                tempServer.appID = server.appID;
-                tempServer.gameName = server.gameName;
-                tempServer.serverActive = server.serverActive;
-                tempServer.updateInterval = server.updateInterval;
-
-                // Update the server in the list
-                int index = servers.FindIndex(s => s.appID == server.appID);
-                if (index != -1)
-                {
-                    servers[index] = tempServer;
-                }
+                servers[index] = server;
             }
             else
             {
-                // If the server doesn't exist in the list, add it
                 servers.Add(server);
             }
-
             SaveServersToJson();
         }
+
         private void SaveServersToJson()
         {
             try
@@ -56,10 +49,9 @@ namespace SteamCMD_Visualized.Backend.Model
                     Formatting = Formatting.Indented,
                     Converters = { new StringEnumConverter() }
                 };
-
                 string jsonString = JsonConvert.SerializeObject(servers, settings);
-                File.WriteAllText(JsonFilePath, jsonString);
-                Console.WriteLine("Servers saved to JSON file successfully.");
+                File.WriteAllText(jsonFilePath, jsonString);
+                Console.WriteLine($"Servers saved to JSON file successfully at: {jsonFilePath}");
             }
             catch (Exception ex)
             {
@@ -69,27 +61,28 @@ namespace SteamCMD_Visualized.Backend.Model
 
         private void LoadServersFromJson()
         {
-            if (File.Exists(JsonFilePath))
+            if (File.Exists(jsonFilePath))
             {
                 try
                 {
-                    string jsonString = File.ReadAllText(JsonFilePath);
+                    string jsonString = File.ReadAllText(jsonFilePath);
                     JsonSerializerSettings settings = new JsonSerializerSettings
                     {
                         Converters = { new StringEnumConverter() }
                     };
-
-                    servers = JsonConvert.DeserializeObject<List<ServerTemplate>>(jsonString, settings);
-                    Console.WriteLine("Servers loaded from JSON file successfully.");
+                    servers = JsonConvert.DeserializeObject<List<ServerTemplate>>(jsonString, settings) ?? new List<ServerTemplate>();
+                    Console.WriteLine($"Servers loaded from JSON file successfully from: {jsonFilePath}");
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error loading servers from JSON: {ex.Message}");
+                    servers = new List<ServerTemplate>(); // Ensure we have an empty list if loading fails
                 }
             }
             else
             {
-                Console.WriteLine("No existing JSON file found. Starting with an empty server list.");
+                Console.WriteLine($"No existing JSON file found at {jsonFilePath}. Starting with an empty server list.");
+                servers = new List<ServerTemplate>();
             }
         }
 
@@ -98,8 +91,11 @@ namespace SteamCMD_Visualized.Backend.Model
             return new List<ServerTemplate>(servers);
         }
     }
+
     public enum UpdateInterval
     {
-        None,Daily,Weekly
+        None,
+        Daily,
+        Weekly
     }
 }

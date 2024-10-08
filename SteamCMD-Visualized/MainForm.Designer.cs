@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.delete_Button = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -48,9 +49,10 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 592F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 594F));
             this.tableLayoutPanel2.Controls.Add(this.addServer, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.editServer, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.delete_Button, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -64,7 +66,7 @@
             this.addServer.Location = new System.Drawing.Point(4, 4);
             this.addServer.Name = "addServer";
             this.addServer.Padding = new System.Windows.Forms.Padding(4);
-            this.addServer.Size = new System.Drawing.Size(83, 51);
+            this.addServer.Size = new System.Drawing.Size(81, 51);
             this.addServer.TabIndex = 0;
             this.addServer.Text = "Add Server";
             this.addServer.UseVisualStyleBackColor = true;
@@ -72,7 +74,7 @@
             // 
             // editServer
             // 
-            this.editServer.Location = new System.Drawing.Point(94, 4);
+            this.editServer.Location = new System.Drawing.Point(92, 4);
             this.editServer.Name = "editServer";
             this.editServer.Padding = new System.Windows.Forms.Padding(4);
             this.editServer.Size = new System.Drawing.Size(94, 51);
@@ -141,6 +143,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Game List";
             // 
+            // delete_Button
+            // 
+            this.delete_Button.Location = new System.Drawing.Point(193, 4);
+            this.delete_Button.Name = "delete_Button";
+            this.delete_Button.Size = new System.Drawing.Size(94, 51);
+            this.delete_Button.TabIndex = 2;
+            this.delete_Button.Text = "Delete Server";
+            this.delete_Button.UseVisualStyleBackColor = true;
+            this.delete_Button.Click += new System.EventHandler(this.delete_Button_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +162,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -169,6 +182,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button delete_Button;
     }
 }
 

@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.steamAppIDTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.updateFrequencyBox = new System.Windows.Forms.ComboBox();
             this.serverNameTextBox = new System.Windows.Forms.TextBox();
-            this.steamAppIDTextBox = new System.Windows.Forms.TextBox();
             this.runServer = new System.Windows.Forms.CheckBox();
+            this.apply_Button = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,24 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(470, 104);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // steamAppIDTextBox
+            // 
+            this.steamAppIDTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.steamAppIDTextBox.Location = new System.Drawing.Point(217, 56);
+            this.steamAppIDTextBox.Name = "steamAppIDTextBox";
+            this.steamAppIDTextBox.Size = new System.Drawing.Size(162, 20);
+            this.steamAppIDTextBox.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Update Frequency";
             // 
             // label1
             // 
@@ -94,16 +113,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Server run automatically";
             // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Update Frequency";
-            // 
             // updateFrequencyBox
             // 
             this.updateFrequencyBox.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -121,14 +130,6 @@
             this.serverNameTextBox.Size = new System.Drawing.Size(162, 20);
             this.serverNameTextBox.TabIndex = 5;
             // 
-            // steamAppIDTextBox
-            // 
-            this.steamAppIDTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.steamAppIDTextBox.Location = new System.Drawing.Point(217, 56);
-            this.steamAppIDTextBox.Name = "steamAppIDTextBox";
-            this.steamAppIDTextBox.Size = new System.Drawing.Size(162, 20);
-            this.steamAppIDTextBox.TabIndex = 6;
-            // 
             // runServer
             // 
             this.runServer.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -139,11 +140,22 @@
             this.runServer.TabIndex = 7;
             this.runServer.UseVisualStyleBackColor = true;
             // 
+            // apply_Button
+            // 
+            this.apply_Button.Location = new System.Drawing.Point(407, 122);
+            this.apply_Button.Name = "apply_Button";
+            this.apply_Button.Size = new System.Drawing.Size(75, 23);
+            this.apply_Button.TabIndex = 1;
+            this.apply_Button.Text = "Apply";
+            this.apply_Button.UseVisualStyleBackColor = true;
+            this.apply_Button.Click += new System.EventHandler(this.apply_Button_Click);
+            // 
             // AddEditServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 128);
+            this.ClientSize = new System.Drawing.Size(494, 152);
+            this.Controls.Add(this.apply_Button);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddEditServer";
             this.Text = "AddEditServer";
@@ -164,5 +176,6 @@
         private System.Windows.Forms.ComboBox updateFrequencyBox;
         private System.Windows.Forms.TextBox serverNameTextBox;
         private System.Windows.Forms.CheckBox runServer;
+        private System.Windows.Forms.Button apply_Button;
     }
 }

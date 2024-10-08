@@ -1,0 +1,8 @@
+[
+  {
+    "appID": "123",
+    "gameName": "Minecraft2",
+    "serverActive": true,
+    "updateInterval": "Weekly"
+  }
+]
