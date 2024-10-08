@@ -2,9 +2,9 @@ name: Commit Lint and Versioning
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   commitlint:

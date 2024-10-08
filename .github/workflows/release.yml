@@ -3,7 +3,7 @@ name: Release Compilation
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
