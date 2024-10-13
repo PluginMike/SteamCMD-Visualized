@@ -14,6 +14,7 @@ namespace SteamCMD_Visualized
         {
             InitializeComponent();
             gameServers = new GameServers();
+            //FIX THIS
         }
 
         private void addServer_Click(object sender, EventArgs e)
